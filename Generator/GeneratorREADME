@@ -1,0 +1,15 @@
+This folder contains code for the generation of various "information" to be downloaded.
+Currently Files include:
+generate.cpp 
+generate.h
+main.cpp
+
+
+Generate.cpp // generate.h: Creates fake information for files, currently does credit card number and expiration.
+
+main.cpp: Writes to file, currently set to append at end of the text file.
+
+
+Things to be done:
+
+Write to file until specified size (Via long loop, or using other libraries to be decided)

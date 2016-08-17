@@ -6,7 +6,7 @@ Generator::Generator(std::string file) {
   this->fileName = file; //Initializes object with a file name to write to. Defaults to "Information.txt"
 }
 
-void Generator::write_to_file(int iterations) {
+void Generator::write_to_file(unsigned iterations) {
   //Idea: If future types of information is made for generation, could use Enums to write different types
   std::ofstream file;
   file.open(this->fileName, std::ios::out | std::ios::app); //Uses the filename given and writes to the end of a file.
@@ -64,8 +64,8 @@ std::string Generator::generate_money(std::minstd_rand0 & generator,
 
   std::uniform_int_distribution<int> change(10,99); //Change used to give more authentic number
 
-  int change_check = change(generator); //Create change for checking
-  int change_savings = change(generator); //Create change for saving
+  int change_check = change(generator); //Create cents/change for checking
+  int change_savings = change(generator); //Create cents/change for saving
 
   int check_amount_int = size(generator); //Create dollar amount for checking
   int savings_amount_int = size(generator); //Create dollar amount for savings
@@ -86,7 +86,7 @@ std::string Generator::generate_money(std::minstd_rand0 & generator,
 
 std::string Generator::generate_cc(std::minstd_rand0 & generator,
                         std::uniform_int_distribution<int> digits) {
-  std::string cc_num = "Credit Card Number: ";
+  std::string cc_num = "Credit Card Number: "; //Initialization
 
   for (int i = 0; i < 16; i++) { //Typical credit card has 16 digits
     if (i > 0 && i % 4 == 0) { //Spaces every four digits
@@ -101,9 +101,9 @@ std::string Generator::generate_cc(std::minstd_rand0 & generator,
 
 std::string Generator::generate_exp(std::minstd_rand0 & generator,
                          std::uniform_int_distribution<int> months) {
-  std::string expiration = "EXP: ";
-  std::string month;
-  std::string year;
+  std::string expiration = "EXP: "; //Full Expiration date
+  std::string month; //Month of expiration
+  std::string year; //Year of expiration
 
   int month_num = months(generator);
   if (month_num < 10) { //Allows for formatted single digit months
@@ -117,7 +117,7 @@ std::string Generator::generate_exp(std::minstd_rand0 & generator,
   if (year_num < 10) { //Only does years 00-12 with the default int_distribution
     expiration += "0";
   }
-  expiration += std::to_string(year_num);
+  expiration += std::to_string(year_num); //Fully formatted string
 
   return expiration;
 

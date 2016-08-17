@@ -9,9 +9,13 @@
 
 class Generator {
 public:
-  //Pass by reference so generator isn't initialized with same seed for each function call
+  //Generator class creates a generator object that can create different string fields for output
+  //Generator class is initialized with a string for a filename to use for output.
+  //write_to_file handles the output to a file and takes an unsigned for the number of iterations. This determines the size of the file.
+
+  //Pass random number generator by reference so generator isn't initialized with same seed for each function call
   Generator(std::string file="Information.txt");
-  void write_to_file(int iterations=1000000); //Iterations determine size of file, Example, 10,000,000 provides a 1.3 GB File.
+  void write_to_file(unsigned iterations=1000000); //Iterations determine size of file, Example, 10,000,000 provides a 1.3 GB File.
                                         //Default will provide a ~130 MB File.
   std::string generate_full();
    //generate_full() Combines all fields to create a full string

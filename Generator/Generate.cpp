@@ -3,15 +3,15 @@
 
 
 Generator::Generator(std::string file) {
-  this->fileName = file;
+  this->fileName = file; //Initializes object with a file name to write to. Defaults to "Information.txt"
 }
 
 void Generator::write_to_file(int iterations) {
   //Idea: If future types of information is made for generation, could use Enums to write different types
   std::ofstream file;
-  file.open(this->fileName, std::ios::out | std::ios::app);
+  file.open(this->fileName, std::ios::out | std::ios::app); //Uses the filename given and writes to the end of a file.
   std::string full;
-  for (int i = 0; i < iterations; i ++) {
+  for (int i = 0; i < iterations; i ++) { //Default iteration size is 1,000,000. This creates a file ~130 MB
     full = generate_full();
     file << full << std::endl;
   }
@@ -25,7 +25,7 @@ std::string Generator::generate_full() {
     std::string money = generate_money(this->generator, this->money_range);
     std::string credit_card = generate_cc(this->generator, this->digits);
     std::string expiration = generate_exp(this->generator, this->months);
-
+    //Combines all elements to form a full bank account
     full = holder + "\n" + account + "\n" + money + "\n" + credit_card + "\n" + expiration + "\n";
     return full;
 }
@@ -54,7 +54,7 @@ std::string Generator::generate_acc(std::minstd_rand0 &generator, std::uniform_i
 std::string Generator::generate_money(std::minstd_rand0 & generator,
                           std::uniform_int_distribution<int> size) {
 
-  std::string full_string = "";
+  std::string full_string = ""; //Initialization
 
   std::string checking = "Checking: $";
   std::string check_amount;
@@ -62,23 +62,23 @@ std::string Generator::generate_money(std::minstd_rand0 & generator,
   std::string savings = "Savings: $";
   std::string savings_amount;
 
-  std::uniform_int_distribution<int> change(10,99);
+  std::uniform_int_distribution<int> change(10,99); //Change used to give more authentic number
 
-  int change_check = change(generator);
-  int change_savings = change(generator);
+  int change_check = change(generator); //Create change for checking
+  int change_savings = change(generator); //Create change for saving
 
-  int check_amount_int = size(generator);
-  int savings_amount_int = size(generator);
+  int check_amount_int = size(generator); //Create dollar amount for checking
+  int savings_amount_int = size(generator); //Create dollar amount for savings
 
-  checking += std::to_string(check_amount_int);
-  checking += ".";
-  checking += std::to_string(change_check);
+  checking += std::to_string(check_amount_int); //Should now be "Checking: $xxx"
+  checking += ".";                              //Should now be "Checking $xxx."
+  checking += std::to_string(change_check);     //Should now be "Checking $xxx.xx"
 
-  savings += std::to_string(savings_amount_int);
-  savings += ".";
-  savings += std::to_string(change_savings);
+  savings += std::to_string(savings_amount_int); //Should now be "Savings: $xxx"
+  savings += ".";                                //Should now be "Savings: $xxx."
+  savings += std::to_string(change_savings);     //Should now be "Savings: $xxx.xx"
 
-  full_string = checking + " " + savings;
+  full_string = checking + " " + savings; //Full string should now be "Checking: $xxx.xx Savings $xxx.xx"
 
   return full_string;
 
@@ -89,7 +89,7 @@ std::string Generator::generate_cc(std::minstd_rand0 & generator,
   std::string cc_num = "Credit Card Number: ";
 
   for (int i = 0; i < 16; i++) { //Typical credit card has 16 digits
-    if (i > 0 && i % 4 == 0) {
+    if (i > 0 && i % 4 == 0) { //Spaces every four digits
       cc_num += " ";
     }
     int num = digits(generator);
@@ -105,16 +105,16 @@ std::string Generator::generate_exp(std::minstd_rand0 & generator,
   std::string month;
   std::string year;
 
-  int month_num = digits(generator);
-  if (month_num < 10) {
+  int month_num = months(generator);
+  if (month_num < 10) { //Allows for formatted single digit months
     expiration += "0";
   }
   expiration += std::to_string(month_num);
 
   expiration += "/";
 
-  int year_num = digits(generator);
-  if (year_num < 10) {
+  int year_num = months(generator);
+  if (year_num < 10) { //Only does years 00-12 with the default int_distribution
     expiration += "0";
   }
   expiration += std::to_string(year_num);

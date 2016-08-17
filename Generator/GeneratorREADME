@@ -11,5 +11,3 @@ main.cpp: Writes to file, currently set to append at end of the text file.
 
 
 Things to be done:
-
-Write to file until specified size (Via long loop, or using other libraries to be decided)

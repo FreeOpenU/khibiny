@@ -1,0 +1,215 @@
+\hypertarget{class_generator}{}\section{Generator Class Reference}
+\label{class_generator}\index{Generator@{Generator}}
+
+
+A \hyperlink{class_generator}{Generator} class.  
+
+
+
+
+{\ttfamily \#include $<$Generate.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generator_ae2d35b67b9814dd4600c10be5e397811}{Generator} (std\+::string file=\char`\"{}Information.\+txt\char`\"{})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator}{Generator} Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}{write\+\_\+to\+\_\+file} (unsigned iterations=1000000)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}{write\+\_\+to\+\_\+file()} uses \hyperlink{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{generate\+\_\+full()} to write to the output file. The default output size is $\sim$130 MB. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{generate\+\_\+full} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{generate\+\_\+full()} Combines all information field functions to create a full string \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_generator_a9ad03b3204c0809c70c0c496c84a4cb0}{generate\+\_\+holder} (std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ first\+\_\+index, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ last\+\_\+index)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_a9ad03b3204c0809c70c0c496c84a4cb0}{generate\+\_\+holder()} Creates a full name for the account \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_generator_a7d63f70a9e8ef7c2f99498318bcf558d}{generate\+\_\+acc} (std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ digits)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_a7d63f70a9e8ef7c2f99498318bcf558d}{generate\+\_\+acc()} creates a fake account number \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_generator_ac2682698e6e1ef7cc7f4b2c7dd11482b}{generate\+\_\+money} (std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ size)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_ac2682698e6e1ef7cc7f4b2c7dd11482b}{generate\+\_\+money()} creates the amount of money within the bank accounts \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_generator_a16404b548c308334e1502619449d4f23}{generate\+\_\+cc} (std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ digits)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_a16404b548c308334e1502619449d4f23}{generate\+\_\+cc()} creates a credit card number \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_generator_a443048cb6d0a5f29867133c13332a268}{generate\+\_\+exp} (std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ months)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_generator_a443048cb6d0a5f29867133c13332a268}{generate\+\_\+exp()} creates an expiration date for the credit card numbers \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{class_generator}{Generator} class. 
+
+\hyperlink{class_generator}{Generator} class creates a generator object whose functions output strings. These output strings are strung together to be output into a file. \hyperlink{class_generator}{Generator} class is initialized with a string for a filename to use for output. The default filename is \char`\"{}\+Information.\+txt\char`\"{} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Generator@{Generator}!Generator@{Generator}}
+\index{Generator@{Generator}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{Generator(std\+::string file=""Information.\+txt"")}{Generator(std::string file="Information.txt")}}]{\setlength{\rightskip}{0pt plus 5cm}Generator\+::\+Generator (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file = {\ttfamily \char`\"{}Information.txt\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_ae2d35b67b9814dd4600c10be5e397811}{}\label{class_generator_ae2d35b67b9814dd4600c10be5e397811}
+
+
+\hyperlink{class_generator}{Generator} Constructor. 
+
+\hyperlink{class_generator}{Generator} constructor takes a string as input(\+The File Name). This string will be used by \hyperlink{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}{write\+\_\+to\+\_\+file()} for output. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}{write\+\_\+to\+\_\+file()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em file} & is the filename for the object to be initialized with. If no file name is given, default is \char`\"{}\+Information.\+txt\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Generator@{Generator}!generate\+\_\+acc@{generate\+\_\+acc}}
+\index{generate\+\_\+acc@{generate\+\_\+acc}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{generate\+\_\+acc(std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ digits)}{generate_acc(std::minstd_rand0 &generator, std::uniform_int_distribution< int > digits)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generator\+::generate\+\_\+acc (
+\begin{DoxyParamCaption}
+\item[{std\+::minstd\+\_\+rand0 \&}]{generator, }
+\item[{std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$}]{digits}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_a7d63f70a9e8ef7c2f99498318bcf558d}{}\label{class_generator_a7d63f70a9e8ef7c2f99498318bcf558d}
+
+
+\hyperlink{class_generator_a7d63f70a9e8ef7c2f99498318bcf558d}{generate\+\_\+acc()} creates a fake account number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & The generator used to generate a random number from the distribution. \\
+\hline
+{\em digits} & The range of numbers to select from to create an account number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string consisting of digits (0-\/9) to simulate an account number. 
+\end{DoxyReturn}
+\index{Generator@{Generator}!generate\+\_\+cc@{generate\+\_\+cc}}
+\index{generate\+\_\+cc@{generate\+\_\+cc}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{generate\+\_\+cc(std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ digits)}{generate_cc(std::minstd_rand0 &generator, std::uniform_int_distribution< int > digits)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generator\+::generate\+\_\+cc (
+\begin{DoxyParamCaption}
+\item[{std\+::minstd\+\_\+rand0 \&}]{generator, }
+\item[{std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$}]{digits}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_a16404b548c308334e1502619449d4f23}{}\label{class_generator_a16404b548c308334e1502619449d4f23}
+
+
+\hyperlink{class_generator_a16404b548c308334e1502619449d4f23}{generate\+\_\+cc()} creates a credit card number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & The generator used to generate a random number from the distribution. \\
+\hline
+{\em digits} & The range of numbers used to select from to create a credit card number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string to simulate a credit card number. 
+\end{DoxyReturn}
+\index{Generator@{Generator}!generate\+\_\+exp@{generate\+\_\+exp}}
+\index{generate\+\_\+exp@{generate\+\_\+exp}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{generate\+\_\+exp(std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ months)}{generate_exp(std::minstd_rand0 &generator, std::uniform_int_distribution< int > months)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generator\+::generate\+\_\+exp (
+\begin{DoxyParamCaption}
+\item[{std\+::minstd\+\_\+rand0 \&}]{generator, }
+\item[{std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$}]{months}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_a443048cb6d0a5f29867133c13332a268}{}\label{class_generator_a443048cb6d0a5f29867133c13332a268}
+
+
+\hyperlink{class_generator_a443048cb6d0a5f29867133c13332a268}{generate\+\_\+exp()} creates an expiration date for the credit card numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & The generator used to generate a random number from the distribution. \\
+\hline
+{\em months} & The range of numbers used to select from to create an expiration date. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string to simulate the expiration date assigned to a credit card. 
+\end{DoxyReturn}
+\index{Generator@{Generator}!generate\+\_\+full@{generate\+\_\+full}}
+\index{generate\+\_\+full@{generate\+\_\+full}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{generate\+\_\+full()}{generate_full()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generator\+::generate\+\_\+full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{}\label{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}
+
+
+\hyperlink{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{generate\+\_\+full()} Combines all information field functions to create a full string 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_generator_a9ad03b3204c0809c70c0c496c84a4cb0}{generate\+\_\+holder()}, \hyperlink{class_generator_a7d63f70a9e8ef7c2f99498318bcf558d}{generate\+\_\+acc()}, \hyperlink{class_generator_ac2682698e6e1ef7cc7f4b2c7dd11482b}{generate\+\_\+money()}, \hyperlink{class_generator_a16404b548c308334e1502619449d4f23}{generate\+\_\+cc()}, \hyperlink{class_generator_a443048cb6d0a5f29867133c13332a268}{generate\+\_\+exp} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+A full string of all generated information. 
+\end{DoxyReturn}
+\index{Generator@{Generator}!generate\+\_\+holder@{generate\+\_\+holder}}
+\index{generate\+\_\+holder@{generate\+\_\+holder}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{generate\+\_\+holder(std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ first\+\_\+index, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ last\+\_\+index)}{generate_holder(std::minstd_rand0 &generator, std::uniform_int_distribution< int > first_index, std::uniform_int_distribution< int > last_index)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generator\+::generate\+\_\+holder (
+\begin{DoxyParamCaption}
+\item[{std\+::minstd\+\_\+rand0 \&}]{generator, }
+\item[{std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$}]{first\+\_\+index, }
+\item[{std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$}]{last\+\_\+index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_a9ad03b3204c0809c70c0c496c84a4cb0}{}\label{class_generator_a9ad03b3204c0809c70c0c496c84a4cb0}
+
+
+\hyperlink{class_generator_a9ad03b3204c0809c70c0c496c84a4cb0}{generate\+\_\+holder()} Creates a full name for the account 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & The generator used to generate a random number from the distributions. \\
+\hline
+{\em first\+\_\+index} & The range to select a random first name from the vector \\
+\hline
+{\em last\+\_\+index} & The range to select a random last name from the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string consisting of a first and last name to simulate an account holder. 
+\end{DoxyReturn}
+\index{Generator@{Generator}!generate\+\_\+money@{generate\+\_\+money}}
+\index{generate\+\_\+money@{generate\+\_\+money}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{generate\+\_\+money(std\+::minstd\+\_\+rand0 \&generator, std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$ size)}{generate_money(std::minstd_rand0 &generator, std::uniform_int_distribution< int > size)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generator\+::generate\+\_\+money (
+\begin{DoxyParamCaption}
+\item[{std\+::minstd\+\_\+rand0 \&}]{generator, }
+\item[{std\+::uniform\+\_\+int\+\_\+distribution$<$ int $>$}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_ac2682698e6e1ef7cc7f4b2c7dd11482b}{}\label{class_generator_ac2682698e6e1ef7cc7f4b2c7dd11482b}
+
+
+\hyperlink{class_generator_ac2682698e6e1ef7cc7f4b2c7dd11482b}{generate\+\_\+money()} creates the amount of money within the bank accounts 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & The generator used to generate a random number from the distribution. \\
+\hline
+{\em size} & The range of numbers to select an amount to assign to the checkings and savings of the account \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string to simulate the amount of money within an account\textquotesingle{}s savings and checkings. 
+\end{DoxyReturn}
+\index{Generator@{Generator}!write\+\_\+to\+\_\+file@{write\+\_\+to\+\_\+file}}
+\index{write\+\_\+to\+\_\+file@{write\+\_\+to\+\_\+file}!Generator@{Generator}}
+\subsubsection[{\texorpdfstring{write\+\_\+to\+\_\+file(unsigned iterations=1000000)}{write_to_file(unsigned iterations=1000000)}}]{\setlength{\rightskip}{0pt plus 5cm}void Generator\+::write\+\_\+to\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{iterations = {\ttfamily 1000000}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}{}\label{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}
+
+
+\hyperlink{class_generator_a097fbf1a97fb6dd2f8c1f7f4423dcb79}{write\+\_\+to\+\_\+file()} uses \hyperlink{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{generate\+\_\+full()} to write to the output file. The default output size is $\sim$130 MB. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_generator_a5fd55ab53733cc8ef626fc1d820bd5bd}{generate\+\_\+full()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em iterations} & is used to determine the file size. For example, 10,000,00 provides a 1.\+3 GB File. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/\+Chris/\+Desktop/\+Generator/Generate.\+h\item 
+/\+Users/\+Chris/\+Desktop/\+Generator/Generate.\+cpp\end{DoxyCompactItemize}

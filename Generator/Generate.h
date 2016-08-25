@@ -18,7 +18,6 @@ public:
   //write_to_file handles the output to a file and takes an unsigned for the number of iterations. This determines the size of the file.
 
   //Pass random number generators by reference so generator isn't initialized with same seed for each function call
-  Generator(std::string file="Information.txt");
   //! Generator Constructor
   /*!
     Generator constructor takes a string as input(The File Name).
@@ -26,8 +25,7 @@ public:
     \sa write_to_file()
     \param file is the filename for the object to be initialized with. If no file name is given, default is "Information.txt"
   */
-
-  void write_to_file(unsigned iterations=1000000);
+  Generator(std::string file="Information.txt");
 
   //! write_to_file() uses generate_full() to write to the output file. The default output size is ~130 MB.
 
@@ -36,15 +34,16 @@ public:
     \param iterations is used to determine the file size. For example, 10,000,00 provides a 1.3 GB File.
   */
 
-  std::string generate_full();
-   //!generate_full() Combines all information field functions to create a full string
-   /*!
-    \sa generator_holder(), generate_acc(), generate_money(), generate_cc(), generate_exp
-    \return A full string of all generated information.
-   */
+  void write_to_file(unsigned iterations=1000000);
 
-  std::string generate_holder(std::minstd_rand0 &generator, std::uniform_int_distribution<int> first_index,
-                                std::uniform_int_distribution<int> last_index);
+  //!generate_full() Combines all information field functions to create a full string
+  /*!
+   \sa generate_holder(), generate_acc(), generate_money(), generate_cc(), generate_exp
+   \return A full string of all generated information.
+  */
+
+  std::string generate_full();
+
   //!generate_holder() Creates a full name for the account
 
   /*!
@@ -53,15 +52,20 @@ public:
     \param last_index The range to select a random last name from the vector
     \return A string consisting of a first and last name to simulate an account holder.
     */
-  std::string generate_acc(std::minstd_rand0 &generator, std::uniform_int_distribution<int> digits);
+
+  std::string generate_holder(std::minstd_rand0 &generator, std::uniform_int_distribution<int> first_index,
+                                std::uniform_int_distribution<int> last_index);
+
   //!generate_acc() creates a fake account number
 
   /*!
-    \param generator The generator used to generate a random number from the distribution.
-    \param digits The range of numbers to select from to create an account number.
-    \return A string consisting of digits (0-9) to simulate an account number.
+  \param generator The generator used to generate a random number from the distribution.
+  \param digits The range of numbers to select from to create an account number.
+  \return A string consisting of digits (0-9) to simulate an account number.
   */
-  std::string generate_money(std::minstd_rand0 &generator, std::uniform_int_distribution<int> size);
+
+  std::string generate_acc(std::minstd_rand0 &generator, std::uniform_int_distribution<int> digits);
+
   //!generate_money() creates the amount of money within the bank accounts
 
   /*!
@@ -70,7 +74,8 @@ public:
     \return A string to simulate the amount of money within an account's savings and checkings.
   */
 
-  std::string generate_cc(std::minstd_rand0 & generator, std::uniform_int_distribution<int> digits);
+  std::string generate_money(std::minstd_rand0 &generator, std::uniform_int_distribution<int> size);
+
   //!generate_cc() creates a credit card number
 
   /*!
@@ -79,7 +84,8 @@ public:
     \return A string to simulate a credit card number.
   */
 
-  std::string generate_exp(std::minstd_rand0 & generator, std::uniform_int_distribution<int> months);
+  std::string generate_cc(std::minstd_rand0 & generator, std::uniform_int_distribution<int> digits);
+
   //!generate_exp() creates an expiration date for the credit card numbers
 
   /*!
@@ -87,6 +93,8 @@ public:
     \param months The range of numbers used to select from to create an expiration date.
     \return A string to simulate the expiration date assigned to a credit card.
   */
+
+  std::string generate_exp(std::minstd_rand0 & generator, std::uniform_int_distribution<int> months);
 
 private:
 
